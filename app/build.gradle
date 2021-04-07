@@ -31,7 +31,7 @@ android {
             keyPassword '123456'
         }
         debug {
-            storeFile file('D:\\android\\project\\StyleMap\\app\\key.jks')
+            storeFile file("key.jks")
             storePassword '123456'
             keyAlias 'key0'
             keyPassword '123456'

@@ -12,11 +12,45 @@
         android:layout_height="match_parent"
         tools:context=".ui.main.MainActivity">
 
+
         <com.baidu.mapapi.map.MapView
             android:id="@+id/mapView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="true" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llContainerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivSearch"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="13dp"
+                android:src="@mipmap/ic_search" />
+
+            <ImageView
+                android:id="@+id/ivTrajectory"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:padding="13dp"
+                android:src="@mipmap/ic_trajectory" />
+
+            <ImageView
+                android:id="@+id/ivPositioning"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="20dp"
+                android:padding="13dp"
+                android:src="@mipmap/ic_positioning" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

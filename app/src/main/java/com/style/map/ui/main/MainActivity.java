@@ -18,11 +18,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     @Override
     public void initView() {
         //设置个性皮肤
-        String customStyleFilePath = FileUtils.getAssetsCacheFile(this,CUSTOM_FILE_NAME_CX);
+        String customStyleFilePath = FileUtils.getAssetsCacheFile(this, CUSTOM_FILE_NAME_CX);
         // 设置个性化地图样式文件的路径和加载方式
         binding.mapView.setMapCustomStylePath(customStyleFilePath);
         // 动态设置个性化地图样式是否生效
         binding.mapView.setMapCustomStyleEnable(true);
+        initContainer();
     }
 
 
@@ -42,5 +43,18 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     protected void onDestroy() {
         super.onDestroy();
         binding.mapView.onDestroy();
+    }
+
+
+    private void initContainer() {
+        binding.ivSearch.setOnClickListener(v -> {
+
+        });
+        binding.ivPositioning.setOnClickListener(v -> {
+
+        });
+        binding.ivTrajectory.setOnClickListener(v -> {
+
+        });
     }
 }
