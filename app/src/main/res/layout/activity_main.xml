@@ -21,35 +21,85 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/llContainerView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:paddingTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/ivSearch"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:padding="13dp"
-                android:src="@mipmap/ic_search" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/ivTrajectory"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="30dp"
-                android:padding="13dp"
-                android:src="@mipmap/ic_trajectory" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/search"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/search_shape"
+                    android:gravity="center_vertical"
+                    android:hint="请输入地点"
+                    android:paddingStart="38dp"
+                    android:paddingEnd="38dp"
+                    android:singleLine="true"
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/ivPositioning"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="20dp"
-                android:padding="13dp"
-                android:src="@mipmap/ic_positioning" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/search_confirm"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:padding="11dp"
+                    android:src="@drawable/icon_search"
+                    app:layout_constraintBottom_toBottomOf="@id/search"
+                    app:layout_constraintLeft_toLeftOf="@id/search"
+                    app:layout_constraintTop_toTopOf="@id/search" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/search_clear"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:padding="11dp"
+                    android:src="@drawable/icon_clear"
+                    app:layout_constraintBottom_toBottomOf="@id/search"
+                    app:layout_constraintRight_toRightOf="@id/search"
+                    app:layout_constraintTop_toTopOf="@id/search" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivTrajectory"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="150dp"
+                    android:padding="13dp"
+                    android:src="@mipmap/ic_trajectory"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPositioning"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="13dp"
+                    android:src="@mipmap/ic_positioning"
+                    app:layout_constraintLeft_toLeftOf="@id/ivTrajectory"
+                    app:layout_constraintTop_toBottomOf="@id/ivTrajectory" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

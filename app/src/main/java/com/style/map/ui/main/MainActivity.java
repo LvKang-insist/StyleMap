@@ -1,10 +1,14 @@
 package com.style.map.ui.main;
 
 
+import android.content.Intent;
+import android.view.View;
+
 import com.style.map.R;
 import com.style.map.core.storage.FileUtils;
 import com.style.map.core.ui.BaseActivity;
 import com.style.map.databinding.ActivityMainBinding;
+import com.style.map.ui.search.SearchActivity;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {
 
@@ -23,9 +27,22 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         binding.mapView.setMapCustomStylePath(customStyleFilePath);
         // 动态设置个性化地图样式是否生效
         binding.mapView.setMapCustomStyleEnable(true);
-        initContainer();
     }
 
+
+    @Override
+    public void listener() {
+        binding.search.setOnClickListener(v -> {
+            startActivityForResult(new Intent(this, SearchActivity.class), 0);
+        });
+
+        binding.ivPositioning.setOnClickListener(v -> {
+
+        });
+        binding.ivTrajectory.setOnClickListener(v -> {
+
+        });
+    }
 
     @Override
     protected void onResume() {
@@ -43,18 +60,5 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     protected void onDestroy() {
         super.onDestroy();
         binding.mapView.onDestroy();
-    }
-
-
-    private void initContainer() {
-        binding.ivSearch.setOnClickListener(v -> {
-
-        });
-        binding.ivPositioning.setOnClickListener(v -> {
-
-        });
-        binding.ivTrajectory.setOnClickListener(v -> {
-
-        });
     }
 }
